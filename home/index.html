@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Painel de Controle Interativo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="painel">
+    <h1>Painel de Controle Interativo</h1>
+
+    <!-- 1. Caixa de mudança de estado: click, mouseenter, mouseleave -->
+    <section class="modulo" aria-labelledby="titulo-caixa">
+      <h2 id="titulo-caixa">Caixa de estado</h2>
+      <p class="ajuda">Clique para trocar a cor. Passe o mouse por cima para ver a mensagem.</p>
+      <div id="caixa" class="caixa" tabindex="0" role="button">Clique em mim</div>
+    </section>
+
+    <!-- 2. Console de teclado: keydown -->
+    <section class="modulo" aria-labelledby="titulo-teclado">
+      <h2 id="titulo-teclado">Console de teclado</h2>
+      <p class="ajuda">Digite qualquer tecla. Pressione Enter para enviar o texto.</p>
+      <label for="campo-texto">Texto</label>
+      <input id="campo-texto" type="text" autocomplete="off" placeholder="Digite aqui">
+      <p id="tecla-pressionada" class="leitura" aria-live="polite">Você pressionou: nenhuma tecla ainda</p>
+      <ul id="lista-envios" class="envios" aria-label="Textos enviados"></ul>
+    </section>
+
+    <!-- 3. Contador dinâmico: botões + atalhos globais -->
+    <section class="modulo" aria-labelledby="titulo-contador">
+      <h2 id="titulo-contador">Contador</h2>
+      <p class="ajuda">Use os botões ou as setas ↑ e ↓ do teclado.</p>
+      <div class="contador">
+        <button id="btn-decrementar" type="button" aria-label="Diminuir">−</button>
+        <output id="valor-contador" aria-live="polite">0</output>
+        <button id="btn-incrementar" type="button" aria-label="Aumentar">+</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
